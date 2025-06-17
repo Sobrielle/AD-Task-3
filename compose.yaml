@@ -2,7 +2,7 @@ services:
   web-app-php:
     build:
       context: .
-    container_name: web-app-php-service
+    container_name: Activity3-service
     ports:
       - "8000:8000"
     develop:
@@ -19,11 +19,11 @@ services:
 
   mongodb:
     image: mongo:latest
-    container_name: web-app-php-mongodb
+    container_name: Activity3-mongodb
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: rootPassword
-      MONGO_INITDB_DATABASE: mydatabase
+      MONGO_INITDB_DATABASE: Database3
     ports:
       - "27111:27017"
     volumes:
@@ -31,16 +31,16 @@ services:
 
   postgresql:
     image: postgres:15
-    container_name: web-app-php-postgresql
+    container_name: Activity3-postgresql
     restart: always
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: mydatabase
+      POSTGRES_DB: Database3
     ports:
       - "5112:5432"
     volumes:
-      - web-app-php-postgresql:/data/db/postgresql
+      - Activity3-postgresql:/data/db/postgresql
 
 volumes:
   web-app-php-mongodb:

@@ -1,10 +1,10 @@
 {
-    "name": "your-username-here/project-name-here",
+    "name": "sobrielle/AD-TASK-3",
     "type": "project",
     "authors": [
         {
-            "name": "your-username-here",
-            "email": "your-email-here@gmail.com"
+            "name": "sobrielle",
+            "email": "sgscalalay@gmail.com"
         }
     ],
     "scripts": {
