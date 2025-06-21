@@ -25,7 +25,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: rootPassword
       MONGO_INITDB_DATABASE: Database3
     ports:
-      - "23467:27017"
+      - "3346:27017"
     volumes:
       - activity3-mongodb:/data/db/mongodb
 
