@@ -34,8 +34,8 @@ services:
     container_name: activity3-postgresql
     restart: always
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: sobrielle
+      POSTGRES_PASSWORD: Sob1234
       POSTGRES_DB: Database3
     ports:
       - "5555:5432"
