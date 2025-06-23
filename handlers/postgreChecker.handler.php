@@ -1,5 +1,7 @@
 <?php
-require_once __DIR__ . '/../envSetter.util.php';
+
+require_once UTILS_PATH . '/envSetter.util.php';
+
 
 $host = $_ENV['POSTGRES_HOST'];
 $port = $_ENV['POSTGRES_PORT'];
