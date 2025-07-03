@@ -52,7 +52,7 @@
 
 ## Overview
 
-AD-Task-3 PART 1, is an activity for the students to be able to set-up their dockers <br>
+AD-Task-3, is an activity for the students to be able to set-up their dockers <br>
 in their own devices. Also having their SQL and other util set-up properly.
 
 ### Key Components
