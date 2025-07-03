@@ -1,10 +1,8 @@
 <?php
 require_once UTILS_PATH . '/envSetter.util.php';
 
-// Check if MongoDB class is available (extension installed)
 if (!class_exists('MongoDB\Driver\Manager')) {
-    // Try fallback: if running in Docker, connection might still work
-    echo "⚠️ MongoDB extension not found in PHP. Skipping MongoDB check.<br>";
+    echo "⚠️ MongoDB extension not available. Skipping MongoDB check. <br>";
     return;
 }
 
