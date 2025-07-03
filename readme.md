@@ -7,10 +7,10 @@
   <a href="https://github.com/zyx-0314/">
     <!-- <img src="./assets/img/" alt="Nyebe" width="130" height="100"> -->
   </a>
-  <h3 align="center">AD-TASK 3 | PART 1</h3>
+  <h3 align="center">AD-TASK 3</h3>
 </div>
 <div align="center">
-  Ad Task 3, the start.
+  Ad Task 3, the start till the end. From step 1 to step 11.
 </div>
 
 <br />
