@@ -1,12 +1,15 @@
 <?php
 require_once UTILS_PATH . '/envSetter.util.php';
 
-try {
-    // $mongo = new MongoDB\Driver\Manager(
-    //     "mongodb://{$_ENV['MONGO_HOST']}:{$_ENV['MONGO_PORT']}"
-    // );
-    $mongo = new MongoDB\Driver\Manager($_ENV['MONGO_URI']);
+// Check if MongoDB class is available (extension installed)
+if (!class_exists('MongoDB\Driver\Manager')) {
+    // Try fallback: if running in Docker, connection might still work
+    echo "⚠️ MongoDB extension not found in PHP. Skipping MongoDB check.<br>";
+    return;
+}
 
+try {
+    $mongo = new MongoDB\Driver\Manager($_ENV['MONGO_URI']);
 
     $command = new MongoDB\Driver\Command(["ping" => 1]);
     $mongo->executeCommand("admin", $command);

@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS tasks (
     status VARCHAR(30) DEFAULT 'Pending',
     due_date DATE,
     assigned_to INTEGER REFERENCES users(id),
-    meeting_id INTEGER REFERENCES meetings(id),
+    --meeting_id INTEGER REFERENCES meetings(id),
+    meeting_id INTEGER,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
