@@ -5,15 +5,13 @@ require_once BASE_PATH . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(BASE_PATH);
 $dotenv->load();
 
-$typeConfig = [
-    'env_name' => $_ENV['ENV_calalay'] ?? 'local',
+$isDocker = file_exists('/.dockerenv'); // Check if running inside a container
 
-    'pg_host' => $_ENV['PG_HOST'],
-    'pg_port' => $_ENV['PG_PORT'],
-    'pg_db' => $_ENV['PG_DB'],
-    'pg_user' => $_ENV['PG_USER'],
-    'pg_pass' => $_ENV['PG_PASS'],
-
-    'mongo_uri' => $_ENV['MONGO_URI'],
-    'mongo_db' => $_ENV['MONGO_DB'],
-];
+if ($isDocker) {
+    $_ENV['PG_HOST'] = 'postgresql'; // Docker service name
+    $_ENV['PG_PORT'] = '5432';       // internal port
+    $_ENV['MONGO_URI'] = 'mongodb://mongodb:27017'; // optional
+} else {
+    $_ENV['PG_HOST'] = $_ENV['PG_HOST'] ?? 'host.docker.internal';
+    $_ENV['PG_PORT'] = $_ENV['PG_PORT'] ?? '5555';
+}
